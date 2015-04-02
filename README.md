@@ -1,7 +1,7 @@
 # meteor-scaffold-iron
 [英文参考文档](https://medium.com/@s_eschweiler/how-to-build-web-apps-ultra-fast-with-meteor-iron-scaffolding-and-automatic-form-generation-11734eda8e67)
 
-[demo展示链接](http://scaffold-ws.meteor.com)
+[demo展示 http://scaffold-ws.meteor.com](http://scaffold-ws.meteor.com)
 
 ## 使用到的package
 * twbs:bootstrap
