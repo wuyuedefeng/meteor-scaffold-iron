@@ -1,5 +1,5 @@
 # meteor-scaffold-iron
-[知道文档](https://medium.com/@s_eschweiler/how-to-build-web-apps-ultra-fast-with-meteor-iron-scaffolding-and-automatic-form-generation-11734eda8e67)
+[英文参考文档](https://medium.com/@s_eschweiler/how-to-build-web-apps-ultra-fast-with-meteor-iron-scaffolding-and-automatic-form-generation-11734eda8e67)
 
 ## 使用到的package
 * twbs:bootstrap
@@ -10,6 +10,7 @@
 * ian:accounts-ui-bootstrap-3
 * natestrauser:font-awesome
 * momentjs:moment
+
 `iron add [package-name]`
 
 ```
@@ -106,6 +107,47 @@ Template.EditIssue.helpers({
         };
     }
 });
+```
+```issues_list.html 用于显示
+<template name="IssuesList">
+    <h1>Issues List</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each issues}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{dueDateFormatted}}</td>
+                <td>
+                    {{#if priorityHigh}}
+                        <span class="label label-danger">{{priority}}</span>
+                    {{/if}}
+                    {{#if priorityMedium}}
+                        <span class="label label-warning">{{priority}}</span>
+                    {{/if}}
+                    {{#if priorityLow}}
+                        <span class="label label-success">{{priority}}</span>
+                    {{/if}}
+                </td>
+                <td>
+                    {{#linkTo route='editIssue'}}
+                        <i class="fa fa-pencil-square-o"></i>
+                    {{/linkTo}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
 ```
 
 ##路由配置
