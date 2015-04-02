@@ -111,6 +111,7 @@ Template.EditIssue.helpers({
 });
 ```
 ###issues_list.html 用于显示
+`
 <template name="IssuesList">
     <h1>Issues List</h1>
     <table class="table table-hover">
@@ -150,6 +151,7 @@ Template.EditIssue.helpers({
         </tbody>
     </table>
 </template>
+`
 
 ##路由配置
 ```routes.js
